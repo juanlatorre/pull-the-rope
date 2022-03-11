@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "incremental": true,
     "target": "esnext",
     "module": "esnext",
@@ -15,8 +16,10 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "importsNotUsedAsValues": "remove"
+    "importsNotUsedAsValues": "remove",
+    "allowJs": true,
+    "checkJs": false
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.js", "src/public/game.jsx"],
   "exclude": ["**/node_modules"]
 }
