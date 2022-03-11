@@ -16,8 +16,7 @@ server.register(fastifyStatic, {
   prefix: "/",
 });
 
-server.get("/", async (_req, reply) => {
-  server.io.emit("hello", "test");
+server.get("/", async (_, reply) => {
   return reply.sendFile("index.html");
 });
 
@@ -30,7 +29,7 @@ server.ready().then(() => {
 
     socket.emit("chain", chain);
 
-    socket.on("keypress", (caracter) => {
+    socket.on("keypress", (caracter: string) => {
       if (chain[counter] === caracter) {
         const newCounter = counter + 1;
         if (newCounter < chain.length) {
